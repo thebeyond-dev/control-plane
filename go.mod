@@ -3,7 +3,7 @@ module github.com/thebeyond-net/control-plane
 go 1.25.6
 
 require (
-	github.com/go-telegram/bot v1.18.0
+	github.com/go-telegram/bot v1.19.0
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/jackc/pgx/v5 v5.8.0
 	go.uber.org/zap v1.27.1
