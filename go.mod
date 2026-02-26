@@ -17,6 +17,7 @@ require (
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/nicksnyder/go-i18n/v2 v2.6.1 // indirect
 	github.com/rogpeppe/go-internal v1.14.1 // indirect
+	github.com/shizumico/arcane v0.0.0-20260215064830-e73c3019a85c // indirect
 	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/sync v0.19.0 // indirect
 	golang.org/x/text v0.33.0 // indirect
