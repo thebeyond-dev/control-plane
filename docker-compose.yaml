@@ -2,6 +2,8 @@ services:
   postgres:
     image: postgres:18.0-alpine3.22
     container_name: thebeyond-postgres
+    ports:
+      - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
       - ./scripts/postgres/init-db.d:/docker-entrypoint-initdb.d
