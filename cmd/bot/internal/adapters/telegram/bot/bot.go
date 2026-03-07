@@ -2,9 +2,7 @@ package bot
 
 import (
 	"github.com/go-telegram/bot"
-	"github.com/thebeyond-net/control-plane/cmd/bot/internal/adapters/telegram/webhook"
 	"github.com/thebeyond-net/control-plane/cmd/bot/internal/core/ports"
-	"github.com/thebeyond-net/control-plane/config"
 	"go.uber.org/zap"
 )
 
@@ -12,11 +10,6 @@ type Bot struct {
 	client *bot.Bot
 }
 
-func New(
-	bot *bot.Bot,
-	appLogger *zap.Logger,
-	handler *webhook.Handler,
-	cfg *config.Config,
-) ports.Bot {
+func New(bot *bot.Bot, appLogger *zap.Logger) ports.Bot {
 	return &Bot{bot}
 }
