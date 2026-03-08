@@ -96,7 +96,7 @@ func (b *MessageBuilder) Send(ctx context.Context) error {
 		ChatID:      b.ChatID,
 		Text:        b.Text,
 		ReplyMarkup: b.ReplyMarkup,
-		ParseMode:   models.ParseModeMarkdown,
+		ParseMode:   models.ParseModeHTML,
 	}
 
 	_, err := b.client.SendMessage(ctx, params)
@@ -109,7 +109,7 @@ func (b *MessageBuilder) Edit(ctx context.Context, messageID int) error {
 		MessageID:   messageID,
 		Text:        b.Text,
 		ReplyMarkup: b.ReplyMarkup,
-		ParseMode:   models.ParseModeMarkdown,
+		ParseMode:   models.ParseModeHTML,
 	}
 
 	_, err := b.client.EditMessageText(ctx, params)
