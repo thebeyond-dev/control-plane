@@ -12,7 +12,7 @@ type NodeRepository interface {
 }
 
 type VPNClient interface {
-	CreatePeer(ctx context.Context) (pubkey, config string, err error)
+	CreatePeer(ctx context.Context, bandwidth int) (pubkey, config string, err error)
 	DeletePeer(ctx context.Context, pubkey string) error
 }
 
