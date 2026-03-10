@@ -7,6 +7,7 @@ import (
 )
 
 type DeviceRepository interface {
+	GetByPublicKey(ctx context.Context, userID, pubkey string) (domain.Device, error)
 	List(ctx context.Context, userID string) ([]domain.Device, error)
 	Save(ctx context.Context, device domain.Device) error
 	Delete(ctx context.Context, userID, pubkey string) error
@@ -14,6 +15,6 @@ type DeviceRepository interface {
 
 type DeviceUseCase interface {
 	List(ctx context.Context, userID string) ([]domain.Device, error)
-	Create(ctx context.Context, userID, nodeID, name string) (string, error)
+	Create(ctx context.Context, userID, nodeID, name string, bandwidth int) (string, error)
 	Delete(ctx context.Context, userID, pubkey string) error
 }

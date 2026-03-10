@@ -7,7 +7,7 @@ import (
 )
 
 type Invoice interface {
-	NewPayment(ctx context.Context, user domain.User, title, description, price, currency string) (string, error)
+	NewPayment(ctx context.Context, user domain.User, currency string, devices, days int, price float64) (string, error)
 }
 
 type SubscriptionRepository interface {
