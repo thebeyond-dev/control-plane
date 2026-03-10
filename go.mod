@@ -10,7 +10,7 @@ require (
 	github.com/jackc/pgx/v5 v5.8.0
 	github.com/nicksnyder/go-i18n/v2 v2.6.1
 	github.com/shizumico/arcane v0.0.0-20260227215512-19abc1a6c122
-	github.com/thebeyond-net/node-agent v0.0.0-20260301014359-9ae28d104a8c
+	github.com/thebeyond-net/node-agent v0.0.0-20260309211322-1df2432de9fe
 	go.uber.org/zap v1.27.1
 	golang.org/x/text v0.34.0
 )
