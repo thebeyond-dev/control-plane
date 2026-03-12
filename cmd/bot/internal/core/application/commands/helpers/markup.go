@@ -2,29 +2,25 @@ package helpers
 
 import (
 	"github.com/thebeyond-net/control-plane/cmd/bot/internal/core/interaction"
-	"github.com/thebeyond-net/control-plane/internal/core/ports"
+	"github.com/thebeyond-net/control-plane/internal/core/domain"
 )
 
-func BuildSelectionMarkup[T ports.Selectable](
-	layout [][]string,
-	items map[string]T,
+func BuildSelectionMarkup(
+	items domain.Items,
 	callbackPrefix string,
+	rowWidth int,
 ) *interaction.ReplyMarkupBuilder {
 	markup := interaction.NewReplyMarkup()
-	for _, row := range layout {
-		markup.Next()
-		for _, code := range row {
-			item, ok := items[code]
-			if !ok {
-				continue
-			}
-
-			markup.AddButton(interaction.NewButton().
-				Text(item.GetName()).
-				CallbackData(callbackPrefix + " " + item.GetCode()).
-				IconCustomEmojiID(item.GetIcon()).
-				Build())
+	for i, item := range items.All() {
+		if i%rowWidth == 0 {
+			markup.Next()
 		}
+
+		markup.AddButton(interaction.NewButton().
+			Text(item.Name).
+			CallbackData(callbackPrefix + " " + item.Code).
+			IconCustomEmojiID(item.Icon).
+			Build())
 	}
 	return markup
 }
