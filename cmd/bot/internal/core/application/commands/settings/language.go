@@ -54,7 +54,8 @@ func (uc *LanguageUseCase) applyChoice(ctx context.Context, msg input.Message, u
 }
 
 func (uc *LanguageUseCase) presentOptions(ctx context.Context, msg input.Message, user domain.User) error {
-	rowWidth := 3
+	const rowWidth = 3
+
 	settingsBtn := i18n.Get(user.LanguageCode, "BackButton", nil, nil)
 
 	text := i18n.Get(user.LanguageCode, "SelectLanguage", nil, nil)

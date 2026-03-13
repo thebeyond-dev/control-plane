@@ -53,7 +53,8 @@ func (uc *CurrencyUseCase) applyChoice(ctx context.Context, msg input.Message, u
 }
 
 func (uc *CurrencyUseCase) presentOptions(ctx context.Context, msg input.Message, user domain.User) error {
-	rowWidth := 3
+	const rowWidth = 3
+
 	backBtn := i18n.Get(user.LanguageCode, "BackButton", nil, nil)
 
 	text := i18n.Get(user.LanguageCode, "SelectCurrency", nil, nil)
