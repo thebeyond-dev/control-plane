@@ -48,7 +48,7 @@ func NewMenuUseCase(
 
 func (uc *MenuUseCase) Execute(ctx context.Context, msg input.Message, user domain.User) error {
 	text := i18n.Get(user.LanguageCode, "Menu", map[string]any{
-		"Remaining": i18n.FormatRemaining(user.LanguageCode, user.ExpiresAt),
+		"Remaining": i18n.FormatRemaining(user.LanguageCode, user.Subscription.ExpiresAt),
 		"Devices":   user.Devices,
 		"Bandwidth": user.GetFormattedBandwidth(),
 	}, nil)
