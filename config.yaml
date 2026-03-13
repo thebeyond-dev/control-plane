@@ -1,0 +1,142 @@
+bot_username: thebeyondrebot
+
+defaultBandwidth: 200
+newbie:
+  devices: 1
+  bandwidth: 200
+  trial_duration: 72h
+  language_code: en
+  currency_code: usd
+
+price_list: "assets/prices/standard.yaml"
+
+payment_methods:
+  # yookassa:
+  #   name: PaymentMethodCard
+  #   icon: 5255969595734396044
+  stars:
+    name: PaymentMethodStars
+    icon: 5256141256987282892
+
+app_urls:
+  android: https://github.com/amnezia-vpn/amnezia-client/releases/tag/4.8.12.9
+  ios: https://apps.apple.com/us/app/amneziawg/id6478942365
+  windows: https://github.com/amnezia-vpn/amnezia-client/releases/download/4.8.12.9/AmneziaVPN_4.8.12.9_x64.exe
+  macos: https://github.com/amnezia-vpn/amnezia-client/releases/tag/4.8.12.9
+  linux: https://github.com/amnezia-vpn/amnezia-client/releases/download/4.8.12.9/AmneziaVPN_4.8.12.9_linux_x64.tar
+
+apps:
+  android:
+    name: Android
+    icon: 5244884255078652834
+  ios:
+    name: iOS
+    icon: 5244784096441305569
+  windows:
+    name: Windows
+    icon: 5244980140223535957
+  macos:
+    name: MacOS
+    icon: 5244609742243928427
+  linux:
+    name: Linux
+    icon: 5244812026613634171
+
+locations:
+  ch:
+    name: SwitzerlandLocation
+    icon: 5301016320836405823
+  de:
+    name: GermanyLocation
+    icon: 5244758661644980143
+  fi:
+    name: FinlandLocation
+    icon: 5269305202900508063
+
+languages:
+  en:
+    name: English
+    icon: 5242431072838393394
+  de:
+    name: Deutsch
+    icon: 5244758661644980143
+  fr:
+    name: Français
+    icon: 5244619341495837745
+  es:
+    name: Español
+    icon: 5242615009107810840
+  pt:
+    name: Português
+    icon: 5242241089255018495
+  it:
+    name: Italiana
+    icon: 5244478329129569742
+  ru:
+    name: Русский
+    icon: 5244784805110916218
+  ua:
+    name: Українська
+    icon: 5244773861534244222
+  pl:
+    name: Polski
+    icon: 5242481259531247259
+  ar:
+    name: العربية
+    icon: 5244933492583736507
+  fa:
+    name: فارسی
+    icon: 5242591141974544979
+  tr:
+    name: Türkçe
+    icon: 5244554070877835432
+  zh:
+    name: 中文
+    icon: 5244454968802450666
+  ja:
+    name: 日本語
+    icon: 5244995434602075072
+  ko:
+    name: 한국어
+    icon: 5244963282476898891
+  hi:
+    name: हिन्दी
+    icon: 5242427675519261458
+
+currencies:
+  usd:
+    name: Dollar
+    icon: 5258424633400529182
+    symbol: $
+  eur:
+    name: Euro
+    icon: 5258267325928348439
+    symbol: €
+  gbp:
+    name: Sterling
+    icon: 5258073378090161226
+    symbol: £
+  rub:
+    name: Рубль
+    icon: 5258034195103519024
+    symbol: ₽
+  uah:
+    name: Гривня
+    icon: 5256192929738822423
+    symbol: ₴
+  pln:
+    name: Złoty
+    icon: 5258114343488230232
+    symbol: zł
+  cny:
+    name: 元
+    icon: 5258235547465325525
+    symbol: ¥
+  jpy:
+    name: 円
+    icon: 5258384947902713094
+    symbol: ¥
+  krw:
+    name: 원
+    icon: 5257963955208360919
+    symbol: ₩

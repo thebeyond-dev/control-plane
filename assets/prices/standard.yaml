@@ -1,0 +1,244 @@
+bandwidths: [200, 500]
+
+periods:
+  - days: 7
+    discount: 0
+    name_key: WeekPeriod
+  - days: 14
+    discount: 0
+    name_key: TwoWeeksPeriod
+  - days: 30
+    discount: 0
+    name_key: MonthPeriod
+  - days: 90
+    discount: 0
+    name_key: SeasonPeriod
+  - days: 180
+    discount: 15
+    name_key: HalfYearPeriod
+  - days: 365
+    discount: 30
+    name_key: YearPeriod
+
+plans:
+  - devices: 1
+    discount: 0
+    prices:
+      200:
+        usd: 1.19
+        eur: 1.09
+        gbp: 0.89
+        rub: 110
+        uah: 50
+        pln: 4.90
+        cny: 8.00
+        jpy: 180
+        krw: 1600
+        xtr: 60
+      500:
+        usd: 1.69
+        eur: 1.59
+        gbp: 1.29
+        rub: 160
+        uah: 75
+        pln: 7.50
+        cny: 12.00
+        jpy: 260
+        krw: 2300
+        xtr: 85
+      1000:
+        usd: 2.49
+        eur: 2.29
+        gbp: 1.89
+        rub: 230
+        uah: 105
+        pln: 10.50
+        cny: 17.50
+        jpy: 370
+        krw: 3300
+        xtr: 120
+
+  - devices: 2
+    discount: 0
+    prices:
+      200:
+        usd: 1.99
+        eur: 1.89
+        gbp: 1.59
+        rub: 190
+        uah: 85
+        pln: 8.90
+        cny: 14.50
+        jpy: 310
+        krw: 2700
+        xtr: 100
+      500:
+        usd: 2.99
+        eur: 2.79
+        gbp: 2.39
+        rub: 280
+        uah: 125
+        pln: 12.90
+        cny: 21.00
+        jpy: 450
+        krw: 4000
+        xtr: 150
+      1000:
+        usd: 4.29
+        eur: 3.99
+        gbp: 3.39
+        rub: 400
+        uah: 180
+        pln: 18.50
+        cny: 30.00
+        jpy: 650
+        krw: 5700
+        xtr: 215
+
+  - devices: 3
+    discount: 0
+    prices:
+      200:
+        usd: 2.79
+        eur: 2.59
+        gbp: 2.19
+        rub: 260
+        uah: 115
+        pln: 11.90
+        cny: 20.00
+        jpy: 420
+        krw: 3700
+        xtr: 140
+      500:
+        usd: 3.99
+        eur: 3.79
+        gbp: 3.19
+        rub: 380
+        uah: 170
+        pln: 17.50
+        cny: 29.00
+        jpy: 610
+        krw: 5400
+        xtr: 200
+      1000:
+        usd: 5.79
+        eur: 5.39
+        gbp: 4.59
+        rub: 540
+        uah: 245
+        pln: 24.90
+        cny: 41.00
+        jpy: 870
+        krw: 7700
+        xtr: 290
+
+  - devices: 4
+    discount: 0
+    prices:
+      200:
+        usd: 3.49
+        eur: 3.19
+        gbp: 2.69
+        rub: 320
+        uah: 145
+        pln: 14.90
+        cny: 24.50
+        jpy: 520
+        krw: 4600
+        xtr: 170
+      500:
+        usd: 4.99
+        eur: 4.69
+        gbp: 3.99
+        rub: 470
+        uah: 210
+        pln: 21.90
+        cny: 36.00
+        jpy: 760
+        krw: 6700
+        xtr: 250
+      1000:
+        usd: 7.09
+        eur: 6.59
+        gbp: 5.59
+        rub: 660
+        uah: 300
+        pln: 30.50
+        cny: 50.00
+        jpy: 1060
+        krw: 9400
+        xtr: 350
+
+  - devices: 5
+    discount: 0
+    prices:
+      200:
+        usd: 4.09
+        eur: 3.79
+        gbp: 3.19
+        rub: 380
+        uah: 170
+        pln: 17.50
+        cny: 29.00
+        jpy: 610
+        krw: 5400
+        xtr: 200
+      500:
+        usd: 5.89
+        eur: 5.49
+        gbp: 4.69
+        rub: 550
+        uah: 250
+        pln: 25.50
+        cny: 42.00
+        jpy: 890
+        krw: 7900
+        xtr: 295
+      1000:
+        usd: 8.39
+        eur: 7.79
+        gbp: 6.59
+        rub: 780
+        uah: 350
+        pln: 36.00
+        cny: 59.00
+        jpy: 1260
+        krw: 11100
+        xtr: 420
+
+  - devices: 7
+    discount: 0
+    prices:
+      200:
+        usd: 5.29
+        eur: 4.89
+        gbp: 4.19
+        rub: 490
+        uah: 220
+        pln: 22.50
+        cny: 37.50
+        jpy: 790
+        krw: 7000
+        xtr: 260
+      500:
+        usd: 7.99
+        eur: 7.49
+        gbp: 6.39
+        rub: 750
+        uah: 340
+        pln: 34.90
+        cny: 57.00
+        jpy: 1210
+        krw: 10700
+        xtr: 400
+      1000:
+        usd: 11.89
+        eur: 10.99
+        gbp: 9.39
+        rub: 1100
+        uah: 500
+        pln: 50.90
+        cny: 84.00
+        jpy: 1780
+        krw: 15700
+        xtr: 590
