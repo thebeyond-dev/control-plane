@@ -12,6 +12,10 @@ CREATE TABLE "user"(
     subscription_expires_at TIMESTAMPTZ,
     language_code TEXT NOT NULL,
     currency_code TEXT NOT NULL,
+    referrer_id UUID REFERENCES "user"(id) ON DELETE SET NULL,
+    referral_balance INTEGER NOT NULL DEFAULT 0,
+    referral_commission_rate INTEGER NOT NULL DEFAULT 33,
+    referrals_count INTEGER NOT NULL DEFAULT 0,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
