@@ -14,8 +14,8 @@ func NewInteractor(subscriptionRepo ports.SubscriptionRepository) ports.BillingU
 	return &Interactor{subscriptionRepo}
 }
 
-func (uc *Interactor) RenewSubscription(ctx context.Context, userID string, devices, days int) error {
-	return uc.subscriptionRepo.Update(ctx, userID, devices, days)
+func (uc *Interactor) RenewSubscription(ctx context.Context, userID string, devices, bandwidth, days int) error {
+	return uc.subscriptionRepo.Update(ctx, userID, devices, bandwidth, days)
 }
 
 func (uc *Interactor) CancelSubscription(ctx context.Context, userID string) error {

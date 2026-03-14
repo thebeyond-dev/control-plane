@@ -3,6 +3,7 @@ package plans
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"github.com/thebeyond-net/control-plane/cmd/bot/internal/core/application/input"
 	"github.com/thebeyond-net/control-plane/cmd/bot/internal/core/interaction"
@@ -35,7 +36,7 @@ func (uc *UseCase) initiatePayment(
 	case "yookassa":
 		return uc.handleYookassaPayment(ctx, msg, user, plan, state, price, currencyCode)
 	case "stars":
-		return uc.handleStarsPayment(ctx, user, plan, state, price)
+		return uc.handleStarsPayment(ctx, user, plan, state, price, currencyCode)
 	}
 
 	return fmt.Errorf("unknown payment method: %s", state.PaymentMethod)
@@ -53,7 +54,7 @@ func (uc *UseCase) handleYookassaPayment(
 	payBtn := i18n.Get(user.LanguageCode, "PayButton", nil, nil)
 	backBtn := i18n.Get(user.LanguageCode, "BackButton", nil, nil)
 
-	url, err := uc.yookassa.NewPayment(ctx, user, currencyCode, plan.Devices, state.Period, price)
+	url, err := uc.yookassa.NewPayment(ctx, user, currencyCode, plan.Devices, state.Bandwidth, state.Period, price)
 	if err != nil {
 		return fmt.Errorf("yookassa payment creation failed: %w", err)
 	}
@@ -82,8 +83,16 @@ func (uc *UseCase) handleStarsPayment(
 	plan domain.Plan,
 	state requestState,
 	price float64,
+	currencyCode string,
 ) error {
-	_, err := uc.telegramStars.NewPayment(ctx, user, "XTR", plan.Devices, state.Period, price)
+	_, err := uc.telegramStars.NewPayment(
+		ctx, user,
+		strings.ToUpper(currencyCode),
+		plan.Devices,
+		state.Bandwidth,
+		state.Period,
+		price,
+	)
 	if err != nil {
 		return fmt.Errorf("telegram stars payment creation failed: %w", err)
 	}

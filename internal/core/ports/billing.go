@@ -7,15 +7,21 @@ import (
 )
 
 type Invoice interface {
-	NewPayment(ctx context.Context, user domain.User, currency string, devices, days int, price float64) (string, error)
+	NewPayment(
+		ctx context.Context,
+		user domain.User,
+		currency string,
+		devices, bandwidth, days int,
+		price float64,
+	) (string, error)
 }
 
 type SubscriptionRepository interface {
-	Update(ctx context.Context, userID string, devices, days int) error
+	Update(ctx context.Context, userID string, devices, bandwidth, days int) error
 	Deactivate(ctx context.Context, userID string) error
 }
 
 type BillingUseCase interface {
-	RenewSubscription(ctx context.Context, userID string, devices, days int) error
+	RenewSubscription(ctx context.Context, userID string, devices, bandwidth, days int) error
 	CancelSubscription(ctx context.Context, userID string) error
 }
