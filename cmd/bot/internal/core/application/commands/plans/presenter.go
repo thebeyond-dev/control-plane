@@ -20,8 +20,12 @@ func (uc *UseCase) formatPlanDetails(plan domain.Plan, languageCode, currencyCod
 
 	currency, _ := uc.currencies.Get(currencyCode)
 
+	period := i18n.Get(languageCode, "DaysCount", map[string]any{
+		"Count": days,
+	}, days)
+
 	return i18n.Get(languageCode, "PlanDescription", map[string]any{
-		"Period":         fmt.Sprintf("%d days", days),
+		"Period":         period,
 		"Devices":        plan.Devices,
 		"Bandwidth":      formatBandwidth(bandwidth),
 		"Price":          formatPrice(price),
