@@ -54,7 +54,14 @@ func (uc *UseCase) handleYookassaPayment(
 	payBtn := i18n.Get(user.LanguageCode, "PayButton", nil, nil)
 	backBtn := i18n.Get(user.LanguageCode, "BackButton", nil, nil)
 
-	url, err := uc.yookassa.NewPayment(ctx, user, currencyCode, plan.Devices, state.Bandwidth, state.Period, price)
+	url, err := uc.yookassa.NewPayment(
+		ctx, user,
+		currencyCode,
+		plan.Devices,
+		state.Bandwidth,
+		state.Period,
+		price,
+	)
 	if err != nil {
 		return fmt.Errorf("yookassa payment creation failed: %w", err)
 	}
