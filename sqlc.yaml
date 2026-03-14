@@ -1,0 +1,16 @@
+version: 2
+sql:
+  - engine: postgresql
+    queries: ./internal/adapters/repositories/postgres/queries/*.sql
+    schema: schema.sql
+    gen:
+      go:
+        package: sqlc
+        out: ./internal/adapters/repositories/postgres/generated
+        sql_package: pgx/v5
+        overrides:
+          - db_type: uuid
+            go_type: github.com/google/uuid.UUID
+          - db_type: uuid
+            go_type: github.com/jackc/pgx/v5/pgtype.UUID
+            nullable: true
