@@ -92,26 +92,39 @@ func (b *MessageBuilder) Send(ctx context.Context) error {
 		return err
 	}
 
-	params := &bot.SendMessageParams{
+	_, err := b.client.SendMessage(ctx, &bot.SendMessageParams{
 		ChatID:      b.ChatID,
 		Text:        b.Text,
 		ReplyMarkup: b.ReplyMarkup,
 		ParseMode:   models.ParseModeHTML,
-	}
-
-	_, err := b.client.SendMessage(ctx, params)
+	})
 	return err
 }
 
 func (b *MessageBuilder) Edit(ctx context.Context, messageID int) error {
-	params := &bot.EditMessageTextParams{
+	if b.File.Content != nil {
+		media := &models.InputMediaPhoto{
+			Media:           "attach://" + b.File.Name,
+			Caption:         b.Text,
+			ParseMode:       models.ParseModeHTML,
+			MediaAttachment: b.File.Content,
+		}
+
+		_, err := b.client.EditMessageMedia(ctx, &bot.EditMessageMediaParams{
+			ChatID:      b.ChatID,
+			MessageID:   messageID,
+			Media:       media,
+			ReplyMarkup: b.ReplyMarkup,
+		})
+		return err
+	}
+
+	_, err := b.client.EditMessageText(ctx, &bot.EditMessageTextParams{
 		ChatID:      b.ChatID,
 		MessageID:   messageID,
 		Text:        b.Text,
 		ReplyMarkup: b.ReplyMarkup,
 		ParseMode:   models.ParseModeHTML,
-	}
-
-	_, err := b.client.EditMessageText(ctx, params)
+	})
 	return err
 }
