@@ -1,0 +1,257 @@
+Menu = """
+{{if .Devices -}}
+<tg-emoji emoji-id="5247192370503520342">🕒</tg-emoji> Restant : {{.Remaining}}
+<tg-emoji emoji-id="5244702968804050765">🛜</tg-emoji> Appareils : {{.Devices}}
+<tg-emoji emoji-id="5242486782859185227">🚀</tg-emoji> Vitesse : {{.Bandwidth}}
+{{- else -}}
+<tg-emoji emoji-id="5242440092269712662">⚠️</tg-emoji> <b>Abonnement inactif</b>
+{{- end}}"""
+
+SelectAction = "Choisissez une action :"
+SelectDevice = "Choisissez un appareil :"
+SelectLocation = "Choisissez une localisation :"
+SelectPeriod = "Choisissez une durée :"
+SelectDevicesCount = "Choisissez le nombre d'appareils :"
+
+ConnectionButton = "Connexion"
+PlansButton = "Tarifs"
+DevicesButton = "Appareils"
+SettingsButton = "Paramètres"
+RefButton = "Parrainage"
+SupportButton = "Support client"
+NewsButton = "Actualités"
+ReviewsButton = "Avis"
+AboutButton = "À propos et conditions"
+
+BuyButton = "Acheter"
+PayButton = "Payer"
+CreateButton = "Créer"
+DeleteButton = "Supprimer"
+BackButton = "Retour"
+ShareButton = "Partager"
+WithdrawButton = "Retirer"
+
+DeviceLimitReached = "Limite d'appareils atteinte"
+DeviceNotFound = "Appareil non trouvé"
+DeviceDeleted = "Appareil supprimé"
+DownloadAppButton = "Application"
+
+PlanDescription = """
+<tg-emoji emoji-id="5247192370503520342">🕒</tg-emoji> Durée : {{.Days}}
+<tg-emoji emoji-id="5244702968804050765">🛜</tg-emoji> Appareils : {{.Devices}}
+<tg-emoji emoji-id="5242486782859185227">🚀</tg-emoji> Vitesse : {{.Bandwidth}}
+<tg-emoji emoji-id="5244606924745380898">💹</tg-emoji> Prix : {{.Price}}{{.CurrencySymbol}}"""
+
+PlanButton = "{{.Emoji}} {{.Name}} — {{.Price}}{{.CurrencySymbol}}"
+
+AgreementPayment = "En payant, vous acceptez les règles du service, y compris la politique de remboursement. L'accès est fourni immédiatement après le paiement réussi. Merci de votre confiance !"
+
+InvoiceDescription = "Tarif : {{.Devices}}, {{.Bandwidth}} Mbps pour {{.Days}}"
+
+NewPayment = """📥 NOUVEAU PAIEMENT !
+
+💶 Montant : {{.Amount}}{{.CurrencySymbol}}
+🛜 Appareils : {{.Devices}}
+🗓 Durée : {{.Days}} jrs"""
+
+Ref = """<b><tg-emoji emoji-id="5303101677782469486">🤑</tg-emoji> Parrainez un ami !</b>
+
+<tg-emoji emoji-id="5244606924745380898">💶</tg-emoji> Solde : <b>{{.Balance}}$</b>
+<tg-emoji emoji-id="5244828222935306011">🛍</tg-emoji> Commission : <b>{{.Commission}}%</b>
+<tg-emoji emoji-id="5244653340456947899">⭐️</tg-emoji> Amis : <b>{{.ReferralsCount}}</b>
+<tg-emoji emoji-id="5303411168830857249">🚀</tg-emoji> Objectif : +5 jours par ami"""
+
+ShareURL = """https://t.me/{{.BotUsername}}?start={{.UserID}}
+🛜 Profitez d'un VPN sécurisé à partir de seulement 110₽/mois !"""
+
+Settings = "Paramètres :"
+LanguageButton = "Langue"
+CurrencyButton = "Devise"
+SelectLanguage = "Choisissez une langue :"
+SelectCurrency = "Choisissez une devise :"
+LanguageSelected = "Langue sélectionnée : {{.Name}}"
+CurrencySelected = "Devise sélectionnée : {{.Name}}"
+
+WeekPeriod = "Semaine"
+TwoWeeksPeriod = "Deux semaines"
+MonthPeriod = "Mois"
+SeasonPeriod = "Saison"
+HalfYearPeriod = "Six mois"
+YearPeriod = "An"
+
+SwitzerlandLocation = "Suisse"
+GermanyLocation = "Allemagne"
+FinlandLocation = "Finlande"
+
+PaymentMethodCard = "Carte"
+PaymentMethodStars = "Stars"
+
+SubscriptionExpired = "L'abonnement a expiré"
+CommandNotFound = "Commande non trouvée"
+FailedToLogin = "Échec de la connexion au compte"
+FailedToExecuteCommand = "Impossible d'exécuter la commande"
+
+TermsOfServiceButton = "Conditions de service"
+PrivacyPolicyButton = "Politique de confidentialité"
+RefundPolicyButton = "Politique de remboursement"
+
+TermsOfService = """<b>OFFRE PUBLIQUE (CGU)</b>
+
+<b>Date d'entrée en vigueur : 15 mars 2026</b>
+
+Le présent document constitue l'offre publique officielle du service <b>The BEYOND</b> (ci-après — « le Prestataire », « le Service », « Nous ») et contient toutes les conditions essentielles relatives à la fourniture de services d'accès VPN à distance.
+
+L'acceptation pleine et entière des conditions de la présente Offre intervient au moment de cliquer sur le bouton « Start » dans le bot Telegram ou lors du paiement de n'importe quel tarif.
+
+<b>1. Objet de l'Offre</b>
+1.1. Le Prestataire accorde au Client une licence non exclusive et révocable pour l'utilisation des configurations d'accès aux serveurs VPN fonctionnant sous le protocole <b>AmneziaWG 2.0</b>.
+1.2. Le service est considéré comme pleinement rendu au moment de l'envoi automatique de la clé d'accès valide au Client via le bot Telegram.
+
+<b>2. Droits et obligations des parties</b>
+
+<b>2.1. Le Prestataire s'engage à :</b>
+- Fournir l'accès au Service conformément au tarif payé.
+- Prendre des mesures raisonnables pour maintenir le bon fonctionnement des serveurs.
+- Respecter la Politique de confidentialité et la Politique de remboursement.
+
+<b>2.2. Le Prestataire ne garantit pas :</b>
+- Une disponibilité ininterrompue à 100 % du Service en cas de blocages par les fournisseurs d'accès, les autorités étatiques ou en cas de force majeure.
+- La compatibilité du Service avec un appareil, une application ou un fournisseur spécifique du Client.
+
+<b>2.3. Le Client s'engage à utiliser le Service exclusivement à des fins légales.</b>
+
+<b>2.4. Il est strictement interdit au Client d'utiliser le Service pour :</b>
+- Toute action violant la législation en vigueur ;
+- La diffusion, le stockage ou la transmission de contenus liés à l'exploitation sexuelle des mineurs ;
+- L'organisation d'attaques DDoS, le scan de ports, le brute-force ou toute autre attaque contre des systèmes tiers ;
+- L'envoi massif de spams ;
+- La diffusion de logiciels malveillants ;
+- Le partage des clés d'accès à des tiers au-delà de la limite du tarif souscrit.
+
+<b>3. Responsabilité et blocage</b>
+
+3.1. Le Service fonctionne selon le principe strict du <b>No-Logs</b>. Nous <b>ne surveillons pas, n'enregistrons pas et n'avons aucune capacité technique</b> pour voir le contenu de votre trafic, vos requêtes DNS ou l'historique de votre activité.
+3.2. Néanmoins, en cas de plaintes officielles, de notifications de fournisseurs d'hébergement, de centres de données ou d'autorités judiciaires concernant une activité illégale liée à l'utilisation du Service, le Prestataire se réserve le droit de <b>bloquer immédiatement le compte et tous les appareils associés sans préavis et sans remboursement</b>.
+3.3. Le Service est fourni « <b>En l'état</b> » (As Is). Le Prestataire décline toute responsabilité pour tout dommage direct ou indirect subi par le Client suite à l'utilisation ou l'impossibilité d'utiliser le Service.
+3.4. La responsabilité maximale du Prestataire est, en tout état de cause, limitée au montant effectivement payé par le Client pour la dernière période facturée.
+
+<b>4. Paiements et remboursements</b>
+Les conditions de paiement et de remboursement sont régies par le document distinct « Politique de remboursement The BEYOND », qui fait partie intégrante de la présente Offre.
+
+<b>5. Modifications de l'Offre</b>
+5.1. Le Prestataire est en droit d'apporter des modifications à l'Offre à tout moment. La nouvelle version est publiée dans le bot Telegram avec la mise à jour de la date.
+5.2. La poursuite de l'utilisation du Service après la publication des modifications implique l'acceptation totale de la nouvelle version.
+
+<b>6. Dispositions finales</b>
+La présente Offre est régie par la législation suisse. Tout litige sera soumis à la compétence des tribunaux du lieu du siège du Prestataire."""
+
+PrivacyPolicy = """<b>POLITIQUE DE CONFIDENTIALITÉ</b>
+
+<b>Date d'entrée en vigueur : 15 mars 2026</b>
+
+La présente Politique de confidentialité explique quelles données nous collectons, comment nous les utilisons et comment nous les protégeons lors de l'utilisation du service <b>The BEYOND</b> (ci-après — « le Service », « Nous »).
+
+Nous sommes basés en Suisse et respectons les normes de confidentialité les plus strictes.
+
+En utilisant notre Service, vous acceptez la présente Politique.
+
+<b>1. Quelles données nous collectons</b>
+Nous collectons <b>uniquement le minimum de données</b> nécessaires au fonctionnement du service :
+- <b>Telegram User ID</b> — pour l'identification du compte et la délivrance automatique des clés.
+- <b>Données sur les appareils</b> — le nombre d'appareils connectés et leurs identifiants (pour respecter la limite d'appareils).
+
+<b>Nous ne collectons ni ne stockons aucune donnée de paiement.</b>
+Tous les paiements sont traités exclusivement par des systèmes de paiement externes (Telegram Stars pour les utilisateurs internationaux et YooKassa pour les utilisateurs en Russie). Nous ne recevons ni le montant, ni la date, ni le mode de paiement, ni aucune autre métadonnée de paiement.
+
+<b>2. Politique d'absence totale de journaux (No-Logs Policy)</b>
+The BEYOND repose sur le protocole <b>AmneziaWG 2.0</b>, qui empêche techniquement la tenue de tout journal d'activité des utilisateurs.
+
+<b>Nous ne collectons pas, ne stockons pas et ne pouvons pas obtenir :</b>
+- Les adresses IP réelles des utilisateurs
+- Les requêtes DNS
+- L'historique des sites visités
+- Le contenu de votre trafic
+- Toute métadonnée de connexion
+
+Aucun journal (log) de connexion n'existe, même temporairement.
+
+<b>3. Pourquoi nous utilisons ces données</b>
+Les données collectées sont utilisées exclusivement pour :
+- L'autorisation et la fourniture de l'accès au Service
+- La gestion de l'abonnement et du nombre d'appareils
+- La réponse à vos demandes d'assistance
+
+Nous n'utilisons pas les données à des fins publicitaires, d'analyse comportementale, de vente ou pour tout autre but.
+
+<b>4. Conservation des données</b>
+Toutes vos données (Telegram User ID et données sur les appareils) sont conservées <b>indéfiniment</b>, même après la fin de l'abonnement. Cela est nécessaire pour maintenir votre compte et permettre de renouveler l'abonnement à tout moment sans perdre votre profil.
+
+<b>5. Transfert de données à des tiers</b>
+<b>Nous ne vendons ni ne transmettons vos données à personne.</b>
+
+<b>6. Protection des données</b>
+Nous appliquons des mesures de protection techniques et organisationnelles modernes (chiffrement, limitation d'accès, audits réguliers). Seuls quelques spécialistes techniques du Service ont accès aux données, et uniquement en cas de nécessité absolue.
+
+<b>7. Vos droits</b>
+À tout moment, vous pouvez :
+- Demander quelles données nous conservons à votre sujet
+- Demander la suppression totale de votre Telegram User ID et de toutes les données associées (cela entraînera la suppression du compte et l'impossibilité d'utiliser le Service)
+- Retirer votre consentement au traitement des données
+
+Pour exercer ces droits, écrivez-nous en <a href="https://t.me/thebeyondnews?direct">Direct</a>.
+
+<b>8. Modifications de la Politique</b>
+Nous pouvons mettre à jour la présente Politique. La nouvelle version sera publiée dans le bot avec la mise à jour de la date. La poursuite de l'utilisation du Service après les modifications signifie que vous acceptez la Politique mise à jour."""
+
+RefundPolicy = """<b>POLITIQUE DE REMBOURSEMENT</b>
+
+<b>Date d'entrée en vigueur : 15 mars 2026</b>
+
+Étant donné que le Service fournit des produits numériques (clés d'accès VPN) et des services dont la consommation commence immédiatement après le paiement et l'activation de la clé, le remboursement n'est possible que dans des <b>cas strictement limités</b>.
+
+<b>1. Conditions de remboursement</b>
+1.1. Un remboursement complet est possible <b>uniquement dans les 24 heures</b> suivant le paiement et <b>uniquement à condition</b> qu'il ait été impossible de se connecter au Service pour des raisons techniques dépendant exclusivement de nous (panne complète du serveur, erreur de génération de clé, dysfonctionnement technique du service).
+1.2. Après expiration du délai de 24 heures suivant le paiement, <b>aucun remboursement</b> ne sera effectué, quelles que soient les circonstances.
+
+<b>2. Cas où le remboursement est impossible</b>
+Aucun remboursement <b>ne sera effectué</b> dans les cas suivants (même si le délai de 24 heures n'est pas dépassé) :
+- Vitesse lente ou connexion instable causée par le fournisseur d'accès de l'utilisateur, la qualité du réseau mobile, la position géographique ou d'autres facteurs externes.
+- Problèmes de configuration de l'application client, si la clé est techniquement valide et fonctionnelle.
+- Blocage du compte ou des appareils pour violation des Règles d'utilisation (torrents, spam, DDoS, toute activité illégale).
+- Décision de l'utilisateur de type « j'ai changé d'avis », « je n'en ai plus besoin », « j'ai trouvé un autre service », etc.
+- Toute raison subjective non liée à une incapacité technique du Service de notre fait.
+
+<b>3. Procédure de remboursement</b>
+3.1. Pour soumettre une demande de remboursement, contactez le <a href="https://t.me/thebeyondnews?direct">support client via le bot Telegram</a>.
+3.2. Votre demande doit impérativement inclure :
+- Votre Telegram User ID
+- Le reçu / confirmation de paiement (capture d'écran ou lien)
+- Une description détaillée du problème + captures d'écran des erreurs (le cas échéant)
+
+3.3. Chaque demande est examinée individuellement. Une décision est prise sous 48 heures. En cas d'approbation, le remboursement est effectué par le même mode de paiement que celui utilisé lors de l'achat, sous 3 à 7 jours ouvrables.
+
+3.4. Nous nous réservons le droit de refuser un remboursement sans justification si la demande ne remplit pas les conditions énoncées à la section 1."""
+
+[DaysCount]
+one="{{.Count}} jour"
+few="{{.Count}} jours"
+many="{{.Count}} jours"
+other="{{.Count}} jours"
+
+[HoursCount]
+one="{{.Count}} heure"
+few="{{.Count}} heures"
+many="{{.Count}} heures"
+other="{{.Count}} heures"
+
+[MinutesCount]
+one="{{.Count}} minute"
+few="{{.Count}} minutes"
+many="{{.Count}} minutes"
+other="{{.Count}} minutes"
+
+[DevicesCount]
+one="{{.Count}} appareil"
+few="{{.Count}} appareils"
+many="{{.Count}} appareils"
+other="{{.Count}} appareils"
