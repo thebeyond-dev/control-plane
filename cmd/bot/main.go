@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"log"
-	"net/http"
 	"os"
 	"os/signal"
 	"time"
@@ -11,6 +10,7 @@ import (
 	"github.com/go-telegram/bot"
 	"github.com/shizumico/arcane/pkg/logger"
 	telegramBot "github.com/thebeyond-net/control-plane/cmd/bot/internal/adapters/telegram/bot"
+	"github.com/thebeyond-net/control-plane/cmd/bot/internal/adapters/telegram/launcher"
 	"github.com/thebeyond-net/control-plane/cmd/bot/internal/adapters/telegram/middlewares"
 	"github.com/thebeyond-net/control-plane/cmd/bot/internal/adapters/telegram/router"
 	"github.com/thebeyond-net/control-plane/cmd/bot/internal/adapters/telegram/webhook"
@@ -156,32 +156,14 @@ func main() {
 		cfg.DefaultBandwidth,
 	)
 
-	srv := &http.Server{
-		Addr:         ":" + cfg.Port,
-		Handler:      botContainer.Instance.WebhookHandler(),
-		ReadTimeout:  30 * time.Second,
-		WriteTimeout: 30 * time.Second,
-		IdleTimeout:  60 * time.Second,
+	var ln launcher.Launcher
+
+	switch os.Getenv("BOT_MODE") {
+	case "webhook":
+		ln = launcher.NewWebHook(botContainer.Instance, appLogger, cfg.Port)
+	default:
+		ln = launcher.NewLongPoll(botContainer.Instance)
 	}
 
-	go botContainer.Instance.StartWebhook(ctx)
-
-	go func() {
-		appLogger.Info("Listening on :" + cfg.Port)
-		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			appLogger.Fatal("Failed to start server", zap.Error(err))
-		}
-	}()
-
-	<-ctx.Done()
-	appLogger.Info("Shutting down server...")
-
-	shutdownCtx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
-
-	if err := srv.Shutdown(shutdownCtx); err != nil {
-		appLogger.Fatal("Server forced to shutdown", zap.Error(err))
-	}
-
-	appLogger.Info("Server exited properly")
+	ln.Launch(ctx)
 }
