@@ -13,3 +13,13 @@ type NewbieConfig struct {
 type Login struct {
 	ReferrerID *string
 }
+
+type FeatureContext struct {
+	UserID        string
+	SessionID     string
+	RemoteAddress string
+	Environment   string
+	AppName       string
+	CurrentTime   string
+	Properties    map[string]string
+}
