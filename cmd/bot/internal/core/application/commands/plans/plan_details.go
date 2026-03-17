@@ -64,21 +64,20 @@ func (uc *UseCase) renderPlanDetails(
 			Build())
 	}
 
-	markup.Next()
-	if hasPrevBandwidth {
-		btnText := formatBandwidth(prevBandwidth)
-		payload := fmt.Sprintf("plan %d %d", plan.ID, prevBandwidth)
-		markup.AddButton(interaction.NewButton().
+	if hasNextBandwidth {
+		btnText := formatBandwidth(nextBandwidth)
+		payload := fmt.Sprintf("plan %d %d", plan.ID, nextBandwidth)
+		markup.Next().AddButton(interaction.NewButton().
 			Text(btnText).
 			CallbackData(payload).
 			IconCustomEmojiID(IconBandwidth).
 			Build())
 	}
 
-	if hasNextBandwidth {
-		btnText := formatBandwidth(nextBandwidth)
-		payload := fmt.Sprintf("plan %d %d", plan.ID, nextBandwidth)
-		markup.AddButton(interaction.NewButton().
+	if hasPrevBandwidth {
+		btnText := formatBandwidth(prevBandwidth)
+		payload := fmt.Sprintf("plan %d %d", plan.ID, prevBandwidth)
+		markup.Next().AddButton(interaction.NewButton().
 			Text(btnText).
 			CallbackData(payload).
 			IconCustomEmojiID(IconBandwidth).
