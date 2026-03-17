@@ -27,13 +27,14 @@ func NewRouter(
 
 func (r *Router) RegisterAllHandlers(
 	b *bot.Bot,
+	cfg *config.Config,
 	telegramBotAdapter ports.Bot,
 	userSettingsUseCase sharedPeers.UserSettingsUseCase,
 	deviceUseCase sharedPeers.DeviceUseCase,
 	nodeUseCase sharedPeers.NodeUseCase,
 	yookassa sharedPeers.Invoice,
 	telegramStars sharedPeers.Invoice,
-	cfg *config.Config,
+	featureFlags sharedPeers.FeatureFlags,
 	newsURL, reviewsURL, supportURL string,
 	defaultBandwidth int,
 ) {
@@ -57,6 +58,7 @@ func (r *Router) RegisterAllHandlers(
 		currencies,
 		yookassa,
 		telegramStars,
+		featureFlags,
 		defaultBandwidth,
 	)
 	refCommand := commands.NewRefUseCase(telegramBotAdapter, cfg.BotUsername, supportURL)
